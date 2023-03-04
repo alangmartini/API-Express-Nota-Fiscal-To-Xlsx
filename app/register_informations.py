@@ -1,12 +1,9 @@
 import openpyxl as opx
-import os
 import json
 import sys
 
 
 fiscal_information = json.loads(sys.argv[1])
-
-# script_path = os.path.dirname(__file__)
 
 ws = opx.Workbook()
 wa = ws.active
