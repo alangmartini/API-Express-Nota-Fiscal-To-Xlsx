@@ -1,0 +1,23 @@
+version: '3'
+services:
+  express:
+    build: ./docker/express
+    container_name: express
+    volumes:
+      - ./app:/usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - 3001:3001
+    stdin_open: true
+    tty: true
+    user: node
+    environment:
+      - COMPOSE_DEBUG=1 docker-compose up
+      - NODE_ENV= dev
+
+volumes:
+  express:
+
+networks:
+  default:
+    driver: bridge
